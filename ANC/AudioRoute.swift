@@ -20,3 +20,19 @@ enum SoundLevel: String {
         }
     }
 }
+
+enum OperatingMode: String, CaseIterable, Identifiable {
+    case normal = "Normal"
+    case jailbreakCompanion = "Jailbreak Companion"
+
+    var id: String { rawValue }
+
+    var detail: String {
+        switch self {
+        case .normal:
+            return "Uses only standard iOS app audio APIs for level measurement and route selection."
+        case .jailbreakCompanion:
+            return "Uses the optional rootless companion when installed. It does not promise true ANC."
+        }
+    }
+}

@@ -47,3 +47,8 @@ Never share your Apple ID password, signing certificate, private key, or provisi
 ## Future rootless companion boundary
 
 `ANC/Companion` only defines protocol and client interfaces; it ships no jailbreak code, does not attempt privilege escalation, and performs no IPC. A future rootless Theos package can implement `ANCCompanionTransport` behind this boundary, with the app retaining a safe in-app fallback.
+
+## Modes
+
+- **Normal**: the standard iOS app mode. It provides the meter and audio-route controls only.
+- **Jailbreak Companion**: checks for an optional rootless Theos companion through the isolated interface. Until that companion is installed and implemented, this mode is inactive and does not create ANC.

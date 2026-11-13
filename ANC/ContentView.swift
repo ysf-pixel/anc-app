@@ -21,12 +21,18 @@ struct ContentView: View {
                 Text(audio.routeMessage).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 Text(audio.permissionMessage).font(.footnote).multilineTextAlignment(.center)
                     .padding(.horizontal)
+                if audio.operatingMode == .jailbreakCompanion {
+                    Text(audio.companionMessage).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
                 Button(audio.isRunning ? "Stop Meter" : "Start Meter") {
                     if audio.isRunning { audio.stop() } else { Task { await audio.requestAndStart() } }
                 }
                 .buttonStyle(.borderedProminent).tint(.white).foregroundStyle(.black)
                 Spacer()
-                Text("Experimental phase analysis only — not active noise cancellation")
+                Text(audio.operatingMode == .normal
+                     ? "Normal mode: level meter only — not active noise cancellation"
+                     : "Jailbreak mode requires a rootless companion — not active noise cancellation")
                     .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     .padding(.horizontal)
             }

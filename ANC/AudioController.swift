@@ -9,12 +9,15 @@ final class AudioController: NSObject, ObservableObject {
     @Published private(set) var inputs: [AudioInputRoute] = []
     @Published var selectedInputID: String?
     @Published var useSpeaker = false
+    @Published var operatingMode: OperatingMode = .normal
+    @Published private(set) var companionMessage = "Jailbreak companion is not selected."
     @Published private(set) var decibels: Double = -80
     @Published private(set) var experimentalPeak: Float = 0
     @Published var processorStrength = 0.5
 
     private let session = AVAudioSession.sharedInstance()
     private let engine = AVAudioEngine()
+    private let companion: any ANCCompanionTransport = DisabledCompanionTransport()
     private var tapInstalled = false
 
     override init() {
@@ -77,6 +80,24 @@ final class AudioController: NSObject, ObservableObject {
             refreshRoutes()
         } catch {
             permissionMessage = "Could not change output: \(error.localizedDescription)"
+        }
+    }
+
+    func setOperatingMode(_ mode: OperatingMode) {
+        operatingMode = mode
+        if mode == .normal {
+            companionMessage = "Normal mode uses the app's safe meter and route controls."
+            return
+        }
+        Task {
+            do {
+                let status = try await companion.status()
+                companionMessage = status.available
+                    ? "Rootless companion \(status.version ?? "") is available."
+                    : "Rootless companion is not installed. Jailbreak mode is inactive."
+            } catch {
+                companionMessage = "Could not contact the rootless companion."
+            }
         }
     }
 

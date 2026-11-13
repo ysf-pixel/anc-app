@@ -7,6 +7,23 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section("Mode") {
+                    Picker("Audio mode", selection: $audio.operatingMode) {
+                        ForEach(OperatingMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: audio.operatingMode) { mode in audio.setOperatingMode(mode) }
+                    Text(audio.operatingMode.detail)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    if audio.operatingMode == .jailbreakCompanion {
+                        Text(audio.companionMessage)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                }
                 Section("Input") {
                     Picker("Microphone", selection: $audio.selectedInputID) {
                         Text("System default").tag(String?.none)
