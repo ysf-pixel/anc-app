@@ -1,5 +1,7 @@
 # ANC
 
+> A hopeful idea to have ANC without buying pricey earbuds.
+
 ANC is a native SwiftUI iPhone app for viewing microphone level, selecting an available input route, and experimenting with phase-analysis parameters. It is **not true active noise cancellation**. iOS cannot use ordinary app APIs to impose low-latency anti-noise on system-wide audio or reliably cancel physical ambient sound. The app deliberately does not play captured microphone audio through the speaker because that can create severe acoustic feedback.
 
 ## Requirements
