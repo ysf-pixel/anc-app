@@ -1,0 +1,45 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+		000000000000000000000001 /* ANCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000011 /* ANCApp.swift */; };
+		000000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000012 /* ContentView.swift */; };
+		000000000000000000000003 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000013 /* AudioController.swift */; };
+		000000000000000000000004 /* AudioRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000014 /* AudioRoute.swift */; };
+		000000000000000000000005 /* ExperimentalProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000015 /* ExperimentalProcessor.swift */; };
+		000000000000000000000006 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000016 /* SettingsView.swift */; };
+		000000000000000000000007 /* ANCCompanionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000017 /* ANCCompanionInterface.swift */; };
+
+		000000000000000000000011 /* ANCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCApp.swift; sourceTree = "<group>"; };
+		000000000000000000000012 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		000000000000000000000013 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		000000000000000000000014 /* AudioRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRoute.swift; sourceTree = "<group>"; };
+		000000000000000000000015 /* ExperimentalProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentalProcessor.swift; sourceTree = "<group>"; };
+		000000000000000000000016 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		000000000000000000000017 /* ANCCompanionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCCompanionInterface.swift; sourceTree = "<group>"; };
+		000000000000000000000018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		000000000000000000000019 /* ANC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
+		000000000000000000000020 = {isa = PBXGroup; children = (000000000000000000000021 /* ANC */, 000000000000000000000022 /* Products */,); sourceTree = "<group>"; };
+		000000000000000000000021 /* ANC */ = {isa = PBXGroup; children = (000000000000000000000011 /* ANCApp.swift */, 000000000000000000000012 /* ContentView.swift */, 000000000000000000000013 /* AudioController.swift */, 000000000000000000000014 /* AudioRoute.swift */, 000000000000000000000015 /* ExperimentalProcessor.swift */, 000000000000000000000016 /* SettingsView.swift */, 000000000000000000000023 /* Companion */, 000000000000000000000018 /* Info.plist */,); path = ANC; sourceTree = "<group>"; };
+		000000000000000000000022 /* Products */ = {isa = PBXGroup; children = (000000000000000000000019 /* ANC.app */,); name = Products; sourceTree = "<group>"; };
+		000000000000000000000023 /* Companion */ = {isa = PBXGroup; children = (000000000000000000000017 /* ANCCompanionInterface.swift */,); path = Companion; sourceTree = "<group>"; };
+
+		000000000000000000000030 /* ANC */ = {isa = PBXNativeTarget; buildConfigurationList = 000000000000000000000040 /* Build configuration list for PBXNativeTarget "ANC" */; buildPhases = (000000000000000000000031 /* Sources */, 000000000000000000000032 /* Frameworks */, 000000000000000000000033 /* Resources */,); buildRules = (); dependencies = (); name = ANC; productName = ANC; productReference = 000000000000000000000019 /* ANC.app */; productType = "com.apple.product-type.application"; };
+		000000000000000000000031 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (000000000000000000000001 /* ANCApp.swift in Sources */, 000000000000000000000002 /* ContentView.swift in Sources */, 000000000000000000000003 /* AudioController.swift in Sources */, 000000000000000000000004 /* AudioRoute.swift in Sources */, 000000000000000000000005 /* ExperimentalProcessor.swift in Sources */, 000000000000000000000006 /* SettingsView.swift in Sources */, 000000000000000000000007 /* ANCCompanionInterface.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+		000000000000000000000032 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		000000000000000000000033 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+
+		000000000000000000000050 /* Project object */ = {isa = PBXProject; attributes = { LastUpgradeCheck = 1540; TargetAttributes = { 000000000000000000000030 = { CreatedOnToolsVersion = 15.4; }; }; }; buildConfigurationList = 000000000000000000000051 /* Build configuration list for PBXProject "ANC" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base,); mainGroup = 000000000000000000000020; productRefGroup = 000000000000000000000022 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (000000000000000000000030 /* ANC */,); };
+		000000000000000000000051 /* Build configuration list for PBXProject "ANC" */ = {isa = XCConfigurationList; buildConfigurations = (000000000000000000000052 /* Debug */, 000000000000000000000053 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		000000000000000000000040 /* Build configuration list for PBXNativeTarget "ANC" */ = {isa = XCConfigurationList; buildConfigurations = (000000000000000000000054 /* Debug */, 000000000000000000000055 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		000000000000000000000052 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; }; name = Debug; };
+		000000000000000000000053 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; }; name = Release; };
+		000000000000000000000054 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.ANC; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; }; name = Debug; };
+		000000000000000000000055 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.ANC; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; }; name = Release; };
+	};
+	rootObject = 000000000000000000000050 /* Project object */;
+}
