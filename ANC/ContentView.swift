@@ -5,7 +5,7 @@ struct ContentView: View {
     @State private var showingSettings = false
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack(spacing: 28) {
                 Spacer()
                 VStack(spacing: 8) {
@@ -35,6 +35,7 @@ struct ContentView: View {
             .toolbar { Button { showingSettings = true } label: { Image(systemName: "gearshape") } }
             .sheet(isPresented: $showingSettings) { SettingsView().environmentObject(audio) }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     private func color(for level: SoundLevel) -> Color {

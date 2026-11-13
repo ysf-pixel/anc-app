@@ -6,7 +6,7 @@ ANC is a native SwiftUI iPhone app for viewing microphone level, selecting an av
 
 ## Requirements
 
-- iOS 17 or later
+- iOS 15 or later
 - A physical iPhone for microphone and route testing (the simulator has no meaningful live audio route)
 - Xcode 15.4 or newer to develop locally, or GitHub Actions to compile in the cloud
 

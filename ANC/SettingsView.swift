@@ -5,16 +5,16 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             Form {
                 Section("Input") {
                     Picker("Microphone", selection: $audio.selectedInputID) {
                         Text("System default").tag(String?.none)
                         ForEach(audio.inputs) { input in Text("\(input.name) (\(input.type))").tag(Optional(input.id)) }
-                    }.onChange(of: audio.selectedInputID) { _, value in audio.selectInput(value) }
+                    }.onChange(of: audio.selectedInputID) { value in audio.selectInput(value) }
                 }
                 Section("Output") {
-                    Toggle("Prefer iPhone speaker", isOn: $audio.useSpeaker).onChange(of: audio.useSpeaker) { _, value in audio.setSpeaker(value) }
+                    Toggle("Prefer iPhone speaker", isOn: $audio.useSpeaker).onChange(of: audio.useSpeaker) { value in audio.setSpeaker(value) }
                     Text("Bluetooth and wired output routes are selected by iOS. This switch only requests speaker vs. the system default.")
                         .font(.footnote).foregroundStyle(.secondary)
                 }
@@ -31,5 +31,6 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -81,7 +81,8 @@ final class AudioController: NSObject, ObservableObject {
     }
 
     private func configureSession() throws {
-        try session.setCategory(.playAndRecord, mode: .measurement, options: [.allowBluetoothHFP, .allowBluetoothA2DP, .defaultToSpeaker])
+        // allowBluetooth is the iOS 15-compatible HFP input-route option.
+        try session.setCategory(.playAndRecord, mode: .measurement, options: [.allowBluetooth, .allowBluetoothA2DP, .defaultToSpeaker])
         try session.setActive(true, options: [])
         refreshRoutes()
     }
